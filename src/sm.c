@@ -84,8 +84,12 @@ sm_transition_effect_fp sm_transition_effect = NULL;
 
 
 /*!
-   \brief
-   \details
+   \brief      Initialize a statemachine with a provided initial state
+   \details    Initializes the statemachine with a provided state.
+               The Initial State from the UML Statechart Diagram is the state of an object before any transitions.
+               The Initial State from the UML Statechart Diagram marks the entry point and the initial statemachine state.
+               The notation for the Initial State is a small solid filled circle. There can only be one Initial State on a diagram.
+               Invoking this function transits from initial pseudo state to the initial statemachine state.
 
 
    \param[in,out]    sm       State machine instance
@@ -95,26 +99,26 @@ sm_transition_effect_fp sm_transition_effect = NULL;
 
    \returns    State of the state machine after initial transition.
                NULL if initialization failed
-
 */
 sm_state_t* sm_init(sm_t* sm, const sm_state_t* state)
 {
-   if(!sm) return NULL;
+   if(!sm || !state) return NULL;
 
-   sm->state = (sm_state_t*)state;
 
-   if(!state) return NULL;
-
+   /* invoke the initial states entry action */
    if(state->entry_action)
       state->entry_action(SM_EVENT_INIT,NULL);
+
+   /* perform transition */
+   sm->state = (sm_state_t*)state;
 
    return (sm_state_t*)state;
 }
 
 /*!
-   \brief
-   \details
-
+   \brief      Terminates the statemachine
+   \details    This function is meant to be used to terminate a statemachine. Usually a statemachine terminates itself by entering
+               a pseudo final state.
 
    \param[in,out]    sm       State machine instance
 */
@@ -129,7 +133,7 @@ void sm_terminate(sm_t *sm)
 }
 
 /*!
-   \brief
+   \brief      Sends an event to a statemachine.
    \details
 
 
