@@ -65,16 +65,23 @@
                - history states not supported
                - sending events in entry/exit/transition/effect functions not allowed (due to recursion)
 
+               __Changelog__
+
+               Revision|Date    |Name  |Change
+               --------|--------|------|-------------------------------------------------
+               0000    |00.00.00|bacmar|Detailed Change Text
+
                References: ISBN 3-8273-1486-0   Das UML-Benutzerhandbuch
 */
 
 #ifndef SM_H_
 #define SM_H_
 
-
-
+/*! Definition of event id to initialize a statemachine, must not be sent by the user*/
 #define SM_EVENT_INIT (~((event_t)0))
+/*! Definition of event id to terminate a statemachine, must not be sent by the user*/
 #define SM_EVENT_EXIT (SM_EVENT_INIT-1)
+
 
 /*!
    An event is something that happens that affects the system.
@@ -156,9 +163,9 @@ extern sm_transition_effect_fp sm_transition_effect; /*!< global variable for th
    to events.
 */
 struct sm_state_t {
-   sm_entry_action_fp entry_action;    /* entry action to be performed if the state gets entered */
-   sm_transitions_fp transitions;      /* external,internal and self transitions of the state */
-   sm_exit_action_fp exit_action;      /* xit action to be performed if the state gets exited */
+   sm_entry_action_fp entry_action;    /*!< entry action to be performed if the state gets entered */
+   sm_transitions_fp transitions;      /*!< external,internal and self transitions of the state */
+   sm_exit_action_fp exit_action;      /*!< exit action to be performed if the state gets exited */
 };
 
 /*!
@@ -171,7 +178,15 @@ typedef struct {
 }sm_t;
 
 
+/*!
+   \brief      Preprocessor macro to retrieve state id of a state.
+   \details    Preprocessor macro to retrieve state id of a state.
 
+   \param[in]     base_ptr    Pointer to the state table
+   \param[in]     state_ptr   Pointer to a specific state of the state table
+
+   \returns       id of the specific state
+*/
 #define sm_state_id(base_ptr,state_ptr) \
    ((state_ptr)-(base_ptr))
 
@@ -180,5 +195,6 @@ typedef struct {
 sm_state_t* sm_init(sm_t* sm, const sm_state_t* state);
 void sm_terminate(sm_t *sm);
 sm_state_t* sm_send(sm_t* sm, event_t event, void* data);
+
 
 #endif /* SM_H_ */

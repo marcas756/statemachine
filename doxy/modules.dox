@@ -1,0 +1,5 @@
+/*! \defgroup PublicInterfaces Public Interface Descriptions */
+
+/*! \defgroup SmInterface Public Statemachine Interface 
+	\ingroup PublicInterfaces
+*/

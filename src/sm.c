@@ -66,7 +66,17 @@
                - sending events in entry/exit/transition/effect functions not allowed (due to recursion)
 
                References: ISBN 3-8273-1486-0   Das UML-Benutzerhandbuch
+
+               __Changelog__
+
+               Revision|Date    |Name  |Change
+               --------|--------|------|-------------------------------------------------
+               0000    |00.00.00|bacmar|Detailed Change Text
+
+
 */
+
+
 
 #include "sm.h"
 #include <stddef.h>
@@ -81,6 +91,7 @@
    \remark     Move to sm instance in future (for future thread safe version) or to transition function as parameter
  */
 sm_transition_effect_fp sm_transition_effect = NULL;
+
 
 
 /*!
@@ -99,6 +110,8 @@ sm_transition_effect_fp sm_transition_effect = NULL;
 
    \returns    State of the state machine after initial transition.
                NULL if initialization failed
+
+   \ingroup SmInterface
 */
 sm_state_t* sm_init(sm_t* sm, const sm_state_t* state)
 {
@@ -121,6 +134,8 @@ sm_state_t* sm_init(sm_t* sm, const sm_state_t* state)
                a pseudo final state.
 
    \param[in,out]    sm       State machine instance
+
+   \ingroup SmInterface
 */
 void sm_terminate(sm_t *sm)
 {
@@ -145,6 +160,8 @@ void sm_terminate(sm_t *sm)
    \returns    State of the state machine after transition.
                NULL if transition failed.
 
+
+   \ingroup SmInterface
 */
 sm_state_t* sm_send(sm_t* sm, event_t event, void* data)
 {
@@ -188,3 +205,5 @@ sm_state_t* sm_send(sm_t* sm, event_t event, void* data)
    /* none or internal transition */
    return source;
 }
+
+
