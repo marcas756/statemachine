@@ -1,0 +1,375 @@
+\hypertarget{statemachine_8c}{}\subsection{src/statemachine.c File Reference}
+\label{statemachine_8c}\index{src/statemachine.\+c@{src/statemachine.\+c}}
+
+
+Statemachine for testing purposes -\/ implementation.  
+
+
+{\ttfamily \#include \char`\"{}statemachine.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for statemachine.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{statemachine_8c__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{statemachine_8c_ad72dbcf6d0153db1b8d8a58001feed83}{D\+E\+B\+UG}~1
+\item 
+\#define \hyperlink{statemachine_8c_ae8924623ca601364965e3d88fb7f40fa}{D\+BG}(...)~printf(\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{statemachine_8c_a19575b4361bd5f13002ea2a60abee30e}{A\+\_\+entry} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em State A entry function. \end{DoxyCompactList}\item 
+const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$ \hyperlink{statemachine_8c_aed25a8dc0c3a7fbe99cb1df00c906308}{A\+\_\+transitions} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em State A transitions function. \end{DoxyCompactList}\item 
+void \hyperlink{statemachine_8c_a6d1d85f00f8d214d50928143924360e8}{A\+\_\+exit} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em State A exit function. \end{DoxyCompactList}\item 
+void \hyperlink{statemachine_8c_a6ee1fe17283b4adb8113f6758ebe126f}{Be\+C\+\_\+transition\+\_\+effect} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\item 
+const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$ \hyperlink{statemachine_8c_aa9f36d192c7bb00314ac80a8d2df48a9}{B\+\_\+transitions} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em State B transitions function. \end{DoxyCompactList}\item 
+void \hyperlink{statemachine_8c_a9268b737532961b741afe6d16b6b27d6}{B\+\_\+exit} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em State B exit function. \end{DoxyCompactList}\item 
+void \hyperlink{statemachine_8c_ab162221c19b71005e9f3b2d5bed511e2}{C\+\_\+entry} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em State C entry function. \end{DoxyCompactList}\item 
+const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$ \hyperlink{statemachine_8c_a7c2e65f9b16175c058af547044882809}{C\+\_\+transitions} (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em State C transitions function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{statemachine_8c_a7f7d42bd83a62658be38736703dda051}{guard} = false
+\item 
+const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} \hyperlink{statemachine_8c_aa017019d16cc39ebd231a5f2598d79c0}{statemachine\+\_\+states} \mbox{[}$\,$\mbox{]}
+\item 
+const size\+\_\+t \hyperlink{statemachine_8c_a03b8b76d23b4f034c554518a79c91e7e}{statemachine\+\_\+state\+\_\+count} = sizeof(\hyperlink{statemachine_8h_aa017019d16cc39ebd231a5f2598d79c0}{statemachine\+\_\+states})/sizeof(\hyperlink{statemachine_8h_aa017019d16cc39ebd231a5f2598d79c0}{statemachine\+\_\+states}\mbox{[}0\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Statemachine for testing purposes -\/ implementation. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2013, \href{mailto:marco@bacchi.at}{\tt marco@bacchi.\+at} All rights reserved.
+\end{DoxyCopyright}
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE A\+U\+T\+H\+OR ``\+AS IS\textquotesingle{}\textquotesingle{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+OR BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE.
+
+\begin{DoxyVersion}{Version}
+0000 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Authors}
+\href{mailto:marco@bacchi.at}{\tt marco@bacchi.\+at} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2013
+\end{DoxyDate}
+This statemachine is for testing purposes. It defines three states and some testing transitions between the states. It also makes use of a guard condition and covers exit/entry actions, transition effects and internal transitions.
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=10cm]{sm_test_statemachine.png}
+\caption{Statemachine for testing purposes}
+\end{DoxyImage}
+
+
+{\bfseries Changelist}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*4{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Revision}&{\bf Date }&{\bf Name }&{\bf Change  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Revision}&{\bf Date }&{\bf Name }&{\bf Change  }\\\cline{1-4}
+\endhead
+0000 &00.\+00.\+00&bacmar&Detailed Change Text \\\cline{1-4}
+\end{longtabu}
+
+
+\subsubsection{Macro Definition Documentation}
+\index{statemachine.\+c@{statemachine.\+c}!D\+BG@{D\+BG}}
+\index{D\+BG@{D\+BG}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{D\+BG}{DBG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+BG(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~printf(\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\hypertarget{statemachine_8c_ae8924623ca601364965e3d88fb7f40fa}{}\label{statemachine_8c_ae8924623ca601364965e3d88fb7f40fa}
+
+
+Definition at line 58 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!D\+E\+B\+UG@{D\+E\+B\+UG}}
+\index{D\+E\+B\+UG@{D\+E\+B\+UG}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{D\+E\+B\+UG}{DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+UG~1}\hypertarget{statemachine_8c_ad72dbcf6d0153db1b8d8a58001feed83}{}\label{statemachine_8c_ad72dbcf6d0153db1b8d8a58001feed83}
+
+
+Definition at line 54 of file statemachine.\+c.
+
+
+
+\subsubsection{Function Documentation}
+\index{statemachine.\+c@{statemachine.\+c}!A\+\_\+entry@{A\+\_\+entry}}
+\index{A\+\_\+entry@{A\+\_\+entry}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{A\+\_\+entry(event\+\_\+t event, void $\ast$data)}{A_entry(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_a19575b4361bd5f13002ea2a60abee30e}{}\label{statemachine_8c_a19575b4361bd5f13002ea2a60abee30e}
+
+
+State A entry function. 
+
+Every state in a U\+ML state chart can have an optional entry action, which is executed upon entry to a state. Entry actions are associated with states, not transitions. Regardless of how a state is entered, its entry action will be executed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!A\+\_\+exit@{A\+\_\+exit}}
+\index{A\+\_\+exit@{A\+\_\+exit}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{A\+\_\+exit(event\+\_\+t event, void $\ast$data)}{A_exit(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_a6d1d85f00f8d214d50928143924360e8}{}\label{statemachine_8c_a6d1d85f00f8d214d50928143924360e8}
+
+
+State A exit function. 
+
+Every state in a U\+ML state chart can have an optional exit action, which is executed upon exit from a state. Exit actions are associated with states, not transitions. Regardless of how a state is left, its exit action will be executed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 123 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!A\+\_\+transitions@{A\+\_\+transitions}}
+\index{A\+\_\+transitions@{A\+\_\+transitions}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{A\+\_\+transitions(event\+\_\+t event, void $\ast$data)}{A_transitions(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf sm\+\_\+state\+\_\+t}$\ast$ A\+\_\+transitions (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_aed25a8dc0c3a7fbe99cb1df00c906308}{}\label{statemachine_8c_aed25a8dc0c3a7fbe99cb1df00c906308}
+
+
+State A transitions function. 
+
+Switching from one state to another is called state transition, and the event that causes it is called the triggering event, or simply the trigger. This function has to be implemented by the state machine designer for each state of the state machine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New state in case of external transition. Same state as before in case of self transition. N\+U\+LL in case of internal or no transition. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!B\+\_\+exit@{B\+\_\+exit}}
+\index{B\+\_\+exit@{B\+\_\+exit}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{B\+\_\+exit(event\+\_\+t event, void $\ast$data)}{B_exit(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_a9268b737532961b741afe6d16b6b27d6}{}\label{statemachine_8c_a9268b737532961b741afe6d16b6b27d6}
+
+
+State B exit function. 
+
+Every state in a U\+ML state chart can have an optional exit action, which is executed upon exit from a state. Exit actions are associated with states, not transitions. Regardless of how a state is left, its exit action will be executed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 176 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!B\+\_\+transitions@{B\+\_\+transitions}}
+\index{B\+\_\+transitions@{B\+\_\+transitions}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{B\+\_\+transitions(event\+\_\+t event, void $\ast$data)}{B_transitions(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf sm\+\_\+state\+\_\+t}$\ast$ B\+\_\+transitions (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_aa9f36d192c7bb00314ac80a8d2df48a9}{}\label{statemachine_8c_aa9f36d192c7bb00314ac80a8d2df48a9}
+
+
+State B transitions function. 
+
+Switching from one state to another is called state transition, and the event that causes it is called the triggering event, or simply the trigger. This function has to be implemented by the state machine designer for each state of the state machine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New state in case of external transition. Same state as before in case of self transition. N\+U\+LL in case of internal or no transition. 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file statemachine.\+c.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{statemachine_8c_aa9f36d192c7bb00314ac80a8d2df48a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{statemachine.\+c@{statemachine.\+c}!Be\+C\+\_\+transition\+\_\+effect@{Be\+C\+\_\+transition\+\_\+effect}}
+\index{Be\+C\+\_\+transition\+\_\+effect@{Be\+C\+\_\+transition\+\_\+effect}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{Be\+C\+\_\+transition\+\_\+effect(event\+\_\+t event, void $\ast$data)}{BeC_transition_effect(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Be\+C\+\_\+transition\+\_\+effect (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_a6ee1fe17283b4adb8113f6758ebe126f}{}\label{statemachine_8c_a6ee1fe17283b4adb8113f6758ebe126f}
+
+
+Definition at line 131 of file statemachine.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{statemachine_8c_a6ee1fe17283b4adb8113f6758ebe126f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{statemachine.\+c@{statemachine.\+c}!C\+\_\+entry@{C\+\_\+entry}}
+\index{C\+\_\+entry@{C\+\_\+entry}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{C\+\_\+entry(event\+\_\+t event, void $\ast$data)}{C_entry(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+\_\+entry (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_ab162221c19b71005e9f3b2d5bed511e2}{}\label{statemachine_8c_ab162221c19b71005e9f3b2d5bed511e2}
+
+
+State C entry function. 
+
+Every state in a U\+ML state chart can have an optional entry action, which is executed upon entry to a state. Entry actions are associated with states, not transitions. Regardless of how a state is entered, its entry action will be executed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!C\+\_\+transitions@{C\+\_\+transitions}}
+\index{C\+\_\+transitions@{C\+\_\+transitions}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{C\+\_\+transitions(event\+\_\+t event, void $\ast$data)}{C_transitions(event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf sm\+\_\+state\+\_\+t}$\ast$ C\+\_\+transitions (
+\begin{DoxyParamCaption}
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{statemachine_8c_a7c2e65f9b16175c058af547044882809}{}\label{statemachine_8c_a7c2e65f9b16175c058af547044882809}
+
+
+State C transitions function. 
+
+Switching from one state to another is called state transition, and the event that causes it is called the triggering event, or simply the trigger. This function has to be implemented by the state machine designer for each state of the state machine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New state in case of external transition. Same state as before in case of self transition. N\+U\+LL in case of internal or no transition. 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file statemachine.\+c.
+
+
+
+\subsubsection{Variable Documentation}
+\index{statemachine.\+c@{statemachine.\+c}!guard@{guard}}
+\index{guard@{guard}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{guard}{guard}}]{\setlength{\rightskip}{0pt plus 5cm}bool guard = false}\hypertarget{statemachine_8c_a7f7d42bd83a62658be38736703dda051}{}\label{statemachine_8c_a7f7d42bd83a62658be38736703dda051}
+Guard condition variable as used in U\+ML state chart 
+
+Definition at line 63 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!statemachine\+\_\+state\+\_\+count@{statemachine\+\_\+state\+\_\+count}}
+\index{statemachine\+\_\+state\+\_\+count@{statemachine\+\_\+state\+\_\+count}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{statemachine\+\_\+state\+\_\+count}{statemachine_state_count}}]{\setlength{\rightskip}{0pt plus 5cm}const size\+\_\+t statemachine\+\_\+state\+\_\+count = sizeof({\bf statemachine\+\_\+states})/sizeof({\bf statemachine\+\_\+states}\mbox{[}0\mbox{]})}\hypertarget{statemachine_8c_a03b8b76d23b4f034c554518a79c91e7e}{}\label{statemachine_8c_a03b8b76d23b4f034c554518a79c91e7e}
+Number of state entries in the state table 
+
+Definition at line 239 of file statemachine.\+c.
+
+\index{statemachine.\+c@{statemachine.\+c}!statemachine\+\_\+states@{statemachine\+\_\+states}}
+\index{statemachine\+\_\+states@{statemachine\+\_\+states}!statemachine.\+c@{statemachine.\+c}}
+\paragraph[{\texorpdfstring{statemachine\+\_\+states}{statemachine_states}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf sm\+\_\+state\+\_\+t} statemachine\+\_\+states\mbox{[}$\,$\mbox{]}}\hypertarget{statemachine_8c_aa017019d16cc39ebd231a5f2598d79c0}{}\label{statemachine_8c_aa017019d16cc39ebd231a5f2598d79c0}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+      \{\hyperlink{statemachine_8c_a19575b4361bd5f13002ea2a60abee30e}{A\_entry},      \hyperlink{statemachine_8c_aed25a8dc0c3a7fbe99cb1df00c906308}{A\_transitions},       \hyperlink{statemachine_8c_a6d1d85f00f8d214d50928143924360e8}{A\_exit}\},          
+      \{NULL,         \hyperlink{statemachine_8c_aa9f36d192c7bb00314ac80a8d2df48a9}{B\_transitions},       \hyperlink{statemachine_8c_a9268b737532961b741afe6d16b6b27d6}{B\_exit}\},          
+      \{\hyperlink{statemachine_8c_ab162221c19b71005e9f3b2d5bed511e2}{C\_entry},      \hyperlink{statemachine_8c_a7c2e65f9b16175c058af547044882809}{C\_transitions},       NULL\}             
+\}
+\end{DoxyCode}
+Statemachine states table 
+
+Definition at line 232 of file statemachine.\+c.
+

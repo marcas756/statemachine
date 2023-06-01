@@ -1,0 +1,6 @@
+<map id="src/sm.h" name="src/sm.h">
+<area shape="rect" id="node2" href="$statemachine_8h.html" title="Statemachine for testing purposes &#45; interface. " alt="" coords="45,80,179,107"/>
+<area shape="rect" id="node5" href="$sm_8c.html" title="General UML state machine implementation. " alt="" coords="203,80,277,107"/>
+<area shape="rect" id="node3" href="$main_8c.html" title="Main entry point of application. " alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node4" href="$statemachine_8c.html" title="Statemachine for testing purposes &#45; implementation. " alt="" coords="112,155,245,181"/>
+</map>

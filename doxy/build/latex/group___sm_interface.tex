@@ -1,0 +1,125 @@
+\hypertarget{group___sm_interface}{}\subsection{Public Statemachine Interface}
+\label{group___sm_interface}\index{Public Statemachine Interface@{Public Statemachine Interface}}
+Collaboration diagram for Public Statemachine Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group___sm_interface}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$ \hyperlink{group___sm_interface_ga4d433df4f0fbd1033d3815ad870cdc5f}{sm\+\_\+init} (\hyperlink{structsm__t}{sm\+\_\+t} $\ast$sm, const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Initialize a statemachine with a provided initial state. \end{DoxyCompactList}\item 
+void \hyperlink{group___sm_interface_ga4a0ade9dfadc3d8a476cd64934ee369c}{sm\+\_\+terminate} (\hyperlink{structsm__t}{sm\+\_\+t} $\ast$sm)
+\begin{DoxyCompactList}\small\item\em Terminates the statemachine. \end{DoxyCompactList}\item 
+\hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$ \hyperlink{group___sm_interface_gac4c2466939ae8d63448dc84848abb7fe}{sm\+\_\+send} (\hyperlink{structsm__t}{sm\+\_\+t} $\ast$sm, \hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Sends an event to a statemachine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+
+
+\subsubsection{Function Documentation}
+\index{Public Statemachine Interface@{Public Statemachine Interface}!sm\+\_\+init@{sm\+\_\+init}}
+\index{sm\+\_\+init@{sm\+\_\+init}!Public Statemachine Interface@{Public Statemachine Interface}}
+\paragraph[{\texorpdfstring{sm\+\_\+init(sm\+\_\+t $\ast$sm, const sm\+\_\+state\+\_\+t $\ast$state)}{sm_init(sm_t *sm, const sm_state_t *state)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sm\+\_\+state\+\_\+t}$\ast$ sm\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf sm\+\_\+t} $\ast$}]{sm, }
+\item[{const {\bf sm\+\_\+state\+\_\+t} $\ast$}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{group___sm_interface_ga4d433df4f0fbd1033d3815ad870cdc5f}{}\label{group___sm_interface_ga4d433df4f0fbd1033d3815ad870cdc5f}
+
+
+Initialize a statemachine with a provided initial state. 
+
+Initializes the statemachine with a provided state. The Initial State from the U\+ML Statechart Diagram is the state of an object before any transitions. The Initial State from the U\+ML Statechart Diagram marks the entry point and the initial statemachine state. The notation for the Initial State is a small solid filled circle. There can only be one Initial State on a diagram. Invoking this function transits from initial pseudo state to the initial statemachine state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em sm} & State machine instance \\
+\hline
+\mbox{\tt in}  & {\em state} & State to initialize the state machine with. Has to be a valid state of the state machines state table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+State of the state machine after initial transition. N\+U\+LL if initialization failed 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file sm.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{group___sm_interface_ga4d433df4f0fbd1033d3815ad870cdc5f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Public Statemachine Interface@{Public Statemachine Interface}!sm\+\_\+send@{sm\+\_\+send}}
+\index{sm\+\_\+send@{sm\+\_\+send}!Public Statemachine Interface@{Public Statemachine Interface}}
+\paragraph[{\texorpdfstring{sm\+\_\+send(sm\+\_\+t $\ast$sm, event\+\_\+t event, void $\ast$data)}{sm_send(sm_t *sm, event_t event, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sm\+\_\+state\+\_\+t}$\ast$ sm\+\_\+send (
+\begin{DoxyParamCaption}
+\item[{{\bf sm\+\_\+t} $\ast$}]{sm, }
+\item[{{\bf event\+\_\+t}}]{event, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{group___sm_interface_gac4c2466939ae8d63448dc84848abb7fe}{}\label{group___sm_interface_gac4c2466939ae8d63448dc84848abb7fe}
+
+
+Sends an event to a statemachine. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em sm} & State machine instance \\
+\hline
+\mbox{\tt in}  & {\em event} & Event to be sent to the state machine \\
+\hline
+\mbox{\tt in,out}  & {\em data} & Data associated with the event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+State of the state machine after transition. N\+U\+LL if transition failed. 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file sm.\+c.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{group___sm_interface_gac4c2466939ae8d63448dc84848abb7fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Public Statemachine Interface@{Public Statemachine Interface}!sm\+\_\+terminate@{sm\+\_\+terminate}}
+\index{sm\+\_\+terminate@{sm\+\_\+terminate}!Public Statemachine Interface@{Public Statemachine Interface}}
+\paragraph[{\texorpdfstring{sm\+\_\+terminate(sm\+\_\+t $\ast$sm)}{sm_terminate(sm_t *sm)}}]{\setlength{\rightskip}{0pt plus 5cm}void sm\+\_\+terminate (
+\begin{DoxyParamCaption}
+\item[{{\bf sm\+\_\+t} $\ast$}]{sm}
+\end{DoxyParamCaption}
+)}\hypertarget{group___sm_interface_ga4a0ade9dfadc3d8a476cd64934ee369c}{}\label{group___sm_interface_ga4a0ade9dfadc3d8a476cd64934ee369c}
+
+
+Terminates the statemachine. 
+
+This function is meant to be used to terminate a statemachine. Usually a statemachine terminates itself by entering a pseudo final state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em sm} & State machine instance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 140 of file sm.\+c.
+

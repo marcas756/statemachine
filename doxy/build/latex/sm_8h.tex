@@ -1,0 +1,296 @@
+\hypertarget{sm_8h}{}\subsection{src/sm.h File Reference}
+\label{sm_8h}\index{src/sm.\+h@{src/sm.\+h}}
+
+
+General U\+ML state machine interface.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{sm_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t}
+\item 
+struct \hyperlink{structsm__t}{sm\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Statemachine declaration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sm_8h_af833a6c202336e060a2dc2a36e0f7da5}{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}~($\sim$((\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t})0))
+\item 
+\#define \hyperlink{sm_8h_aff81f7c6532ee2e3c1068490df29de83}{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT}~(\hyperlink{sm_8h_af833a6c202336e060a2dc2a36e0f7da5}{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}-\/1)
+\item 
+\#define \hyperlink{sm_8h_a052d3735a2de37a7ffea5ff2a3fcdec2}{sm\+\_\+state\+\_\+id}(base\+\_\+ptr,  state\+\_\+ptr)~((state\+\_\+ptr)-\/(base\+\_\+ptr))
+\begin{DoxyCompactList}\small\item\em Preprocessor macro to retrieve state id of a state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t}
+\item 
+typedef struct \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} \hyperlink{sm_8h_a93e6a76b714190255b411b31c95490b4}{sm\+\_\+state\+\_\+t}
+\item 
+typedef void($\ast$ \hyperlink{sm_8h_a921fca7daf06810fad2eca72b5a0bafc}{sm\+\_\+entry\+\_\+action\+\_\+fp}) (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Callback function type for entry actions. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{sm_8h_a0b45d5fb53866f3e67285aa38b248570}{sm\+\_\+exit\+\_\+action\+\_\+fp}) (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Callback function type for exit actions. \end{DoxyCompactList}\item 
+typedef const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$($\ast$ \hyperlink{sm_8h_a48bd707c3bca2429aee6582bd67cd273}{sm\+\_\+transitions\+\_\+fp}) (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Callback function type for transitions. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{sm_8h_a858adebebe4f5a481688f24fcbbd5544}{sm\+\_\+transition\+\_\+effect\+\_\+fp}) (\hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Callback function type for transition effects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$ \hyperlink{group___sm_interface_ga4d433df4f0fbd1033d3815ad870cdc5f}{sm\+\_\+init} (\hyperlink{structsm__t}{sm\+\_\+t} $\ast$sm, const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Initialize a statemachine with a provided initial state. \end{DoxyCompactList}\item 
+void \hyperlink{group___sm_interface_ga4a0ade9dfadc3d8a476cd64934ee369c}{sm\+\_\+terminate} (\hyperlink{structsm__t}{sm\+\_\+t} $\ast$sm)
+\begin{DoxyCompactList}\small\item\em Terminates the statemachine. \end{DoxyCompactList}\item 
+\hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} $\ast$ \hyperlink{group___sm_interface_gac4c2466939ae8d63448dc84848abb7fe}{sm\+\_\+send} (\hyperlink{structsm__t}{sm\+\_\+t} $\ast$sm, \hyperlink{sm_8h_a1db78734760bf970c329945446b28432}{event\+\_\+t} event, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Sends an event to a statemachine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sm_8h_a858adebebe4f5a481688f24fcbbd5544}{sm\+\_\+transition\+\_\+effect\+\_\+fp} \hyperlink{sm_8h_a96c99a5af0b8720710e99939364da3af}{sm\+\_\+transition\+\_\+effect}
+\begin{DoxyCompactList}\small\item\em Callback function type for transition effects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+General U\+ML state machine interface. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2013, \href{mailto:marco@bacchi.at}{\tt marco@bacchi.\+at} All rights reserved.
+\end{DoxyCopyright}
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE A\+U\+T\+H\+OR ``\+AS IS\textquotesingle{}\textquotesingle{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+OR BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE.
+
+\begin{DoxyVersion}{Version}
+0000 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Authors}
+\href{mailto:marco@bacchi.at}{\tt marco@bacchi.\+at} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2013
+\end{DoxyDate}
+U\+ML state machine, also known as U\+ML state chart, is a significantly enhanced realization of the mathematical concept of a finite automaton in computer science applications as expressed in the Unified Modeling Language (U\+ML) notation. (wikipedia)~\newline
+~\newline
+ The concepts behind it are about organizing the way a device, computer program, or other (often technical) process works such that an entity or each of its sub-\/entities is always in exactly one of a number of possible states and where there are well-\/defined conditional transitions between these states. (wikipedia)~\newline
+~\newline
+ This module and its interface provides the general implementation part for any state machine written for this implementation.
+
+This implementation supports\+:~\newline
+~\newline
+
+\begin{DoxyItemize}
+\item finite flat state machines
+\item guard conditions for transitions
+\item state entry and exit actions
+\item do actions by starting/stopping (proto)threads in entry/exit action respectively
+\item transition effects (actions directly associated with a specific transition)
+\end{DoxyItemize}
+
+Limitations of this implementation\+: ~\newline
+~\newline
+
+\begin{DoxyItemize}
+\item not interrupt/thread safe
+\item hierarchical state machines not supported
+\item execution time overhead due to generalization in comparison to quick and dirty F\+S\+Ms
+\item transition fork/join not supported
+\item history states not supported
+\item sending events in entry/exit/transition/effect functions not allowed (due to recursion)
+\end{DoxyItemize}
+
+{\bfseries Changelog}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*4{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Revision}&{\bf Date }&{\bf Name }&{\bf Change  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Revision}&{\bf Date }&{\bf Name }&{\bf Change  }\\\cline{1-4}
+\endhead
+0000 &00.\+00.\+00&bacmar&Detailed Change Text \\\cline{1-4}
+\end{longtabu}
+References\+: I\+S\+BN 3-\/8273-\/1486-\/0 Das U\+M\+L-\/\+Benutzerhandbuch 
+
+\subsubsection{Macro Definition Documentation}
+\index{sm.\+h@{sm.\+h}!S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT@{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT}}
+\index{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT@{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT}{SM_EVENT_EXIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT~({\bf S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}-\/1)}\hypertarget{sm_8h_aff81f7c6532ee2e3c1068490df29de83}{}\label{sm_8h_aff81f7c6532ee2e3c1068490df29de83}
+Definition of event id to terminate a statemachine, must not be sent by the user 
+
+Definition at line 83 of file sm.\+h.
+
+\index{sm.\+h@{sm.\+h}!S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT@{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}}
+\index{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT@{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}{SM_EVENT_INIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT~($\sim$(({\bf event\+\_\+t})0))}\hypertarget{sm_8h_af833a6c202336e060a2dc2a36e0f7da5}{}\label{sm_8h_af833a6c202336e060a2dc2a36e0f7da5}
+Definition of event id to initialize a statemachine, must not be sent by the user 
+
+Definition at line 81 of file sm.\+h.
+
+\index{sm.\+h@{sm.\+h}!sm\+\_\+state\+\_\+id@{sm\+\_\+state\+\_\+id}}
+\index{sm\+\_\+state\+\_\+id@{sm\+\_\+state\+\_\+id}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{sm\+\_\+state\+\_\+id}{sm_state_id}}]{\setlength{\rightskip}{0pt plus 5cm}\#define sm\+\_\+state\+\_\+id(
+\begin{DoxyParamCaption}
+\item[{}]{base\+\_\+ptr, }
+\item[{}]{state\+\_\+ptr}
+\end{DoxyParamCaption}
+)~((state\+\_\+ptr)-\/(base\+\_\+ptr))}\hypertarget{sm_8h_a052d3735a2de37a7ffea5ff2a3fcdec2}{}\label{sm_8h_a052d3735a2de37a7ffea5ff2a3fcdec2}
+
+
+Preprocessor macro to retrieve state id of a state. 
+
+Preprocessor macro to retrieve state id of a state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em base\+\_\+ptr} & Pointer to the state table \\
+\hline
+\mbox{\tt in}  & {\em state\+\_\+ptr} & Pointer to a specific state of the state table\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of the specific state 
+\end{DoxyReturn}
+
+
+Definition at line 190 of file sm.\+h.
+
+
+
+\subsubsection{Typedef Documentation}
+\index{sm.\+h@{sm.\+h}!event\+\_\+t@{event\+\_\+t}}
+\index{event\+\_\+t@{event\+\_\+t}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{event\+\_\+t}{event_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf event\+\_\+t}}\hypertarget{sm_8h_a1db78734760bf970c329945446b28432}{}\label{sm_8h_a1db78734760bf970c329945446b28432}
+An event is something that happens that affects the system. An event can have associated parameters, allowing the event instance to convey not only the occurrence of some interesting incident but also quantitative information regarding that occurrence. The associated parameters can be forwarded to the state machine via the data pointer of the sm\+\_\+send function 
+
+Definition at line 92 of file sm.\+h.
+
+\index{sm.\+h@{sm.\+h}!sm\+\_\+entry\+\_\+action\+\_\+fp@{sm\+\_\+entry\+\_\+action\+\_\+fp}}
+\index{sm\+\_\+entry\+\_\+action\+\_\+fp@{sm\+\_\+entry\+\_\+action\+\_\+fp}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{sm\+\_\+entry\+\_\+action\+\_\+fp}{sm_entry_action_fp}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ sm\+\_\+entry\+\_\+action\+\_\+fp) ({\bf event\+\_\+t} event, void $\ast$data)}\hypertarget{sm_8h_a921fca7daf06810fad2eca72b5a0bafc}{}\label{sm_8h_a921fca7daf06810fad2eca72b5a0bafc}
+
+
+Callback function type for entry actions. 
+
+Every state in a U\+ML state chart can have an optional entry action, which is executed upon entry to a state. Entry actions are associated with states, not transitions. Regardless of how a state is entered, its entry action will be executed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file sm.\+h.
+
+\index{sm.\+h@{sm.\+h}!sm\+\_\+exit\+\_\+action\+\_\+fp@{sm\+\_\+exit\+\_\+action\+\_\+fp}}
+\index{sm\+\_\+exit\+\_\+action\+\_\+fp@{sm\+\_\+exit\+\_\+action\+\_\+fp}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{sm\+\_\+exit\+\_\+action\+\_\+fp}{sm_exit_action_fp}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ sm\+\_\+exit\+\_\+action\+\_\+fp) ({\bf event\+\_\+t} event, void $\ast$data)}\hypertarget{sm_8h_a0b45d5fb53866f3e67285aa38b248570}{}\label{sm_8h_a0b45d5fb53866f3e67285aa38b248570}
+
+
+Callback function type for exit actions. 
+
+Every state in a U\+ML state chart can have an optional exit action, which is executed upon exit from a state. Exit actions are associated with states, not transitions. Regardless of how a state is left, its exit action will be executed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file sm.\+h.
+
+\index{sm.\+h@{sm.\+h}!sm\+\_\+state\+\_\+t@{sm\+\_\+state\+\_\+t}}
+\index{sm\+\_\+state\+\_\+t@{sm\+\_\+state\+\_\+t}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{sm\+\_\+state\+\_\+t}{sm_state_t}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf sm\+\_\+state\+\_\+t} {\bf sm\+\_\+state\+\_\+t}}\hypertarget{sm_8h_a93e6a76b714190255b411b31c95490b4}{}\label{sm_8h_a93e6a76b714190255b411b31c95490b4}
+Forward declaration of sm\+\_\+state structure 
+
+Definition at line 97 of file sm.\+h.
+
+\index{sm.\+h@{sm.\+h}!sm\+\_\+transition\+\_\+effect\+\_\+fp@{sm\+\_\+transition\+\_\+effect\+\_\+fp}}
+\index{sm\+\_\+transition\+\_\+effect\+\_\+fp@{sm\+\_\+transition\+\_\+effect\+\_\+fp}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{sm\+\_\+transition\+\_\+effect\+\_\+fp}{sm_transition_effect_fp}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ sm\+\_\+transition\+\_\+effect\+\_\+fp) ({\bf event\+\_\+t} event, void $\ast$data)}\hypertarget{sm_8h_a858adebebe4f5a481688f24fcbbd5544}{}\label{sm_8h_a858adebebe4f5a481688f24fcbbd5544}
+
+
+Callback function type for transition effects. 
+
+Switching from one state to another is called state transition. An effect specifies an optional behavior to be performed when the transition fires. The transition effect has to be set in the transition function and is invoked after exit of the source state and before entry of the target state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file sm.\+h.
+
+\index{sm.\+h@{sm.\+h}!sm\+\_\+transitions\+\_\+fp@{sm\+\_\+transitions\+\_\+fp}}
+\index{sm\+\_\+transitions\+\_\+fp@{sm\+\_\+transitions\+\_\+fp}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{sm\+\_\+transitions\+\_\+fp}{sm_transitions_fp}}]{\setlength{\rightskip}{0pt plus 5cm}typedef const {\bf sm\+\_\+state\+\_\+t}$\ast$($\ast$ sm\+\_\+transitions\+\_\+fp) ({\bf event\+\_\+t} event, void $\ast$data)}\hypertarget{sm_8h_a48bd707c3bca2429aee6582bd67cd273}{}\label{sm_8h_a48bd707c3bca2429aee6582bd67cd273}
+
+
+Callback function type for transitions. 
+
+Switching from one state to another is called state transition, and the event that causes it is called the triggering event, or simply the trigger. This function has to be implemented by the state machine designer for each state of the state machine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Triggering event \\
+\hline
+{\em data} & Data associated with the event\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New state in case of external transition. Same state as before in case of self transition. N\+U\+LL in case of internal or no transition. 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file sm.\+h.
+
+
+
+\subsubsection{Variable Documentation}
+\index{sm.\+h@{sm.\+h}!sm\+\_\+transition\+\_\+effect@{sm\+\_\+transition\+\_\+effect}}
+\index{sm\+\_\+transition\+\_\+effect@{sm\+\_\+transition\+\_\+effect}!sm.\+h@{sm.\+h}}
+\paragraph[{\texorpdfstring{sm\+\_\+transition\+\_\+effect}{sm_transition_effect}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sm\+\_\+transition\+\_\+effect\+\_\+fp} sm\+\_\+transition\+\_\+effect}\hypertarget{sm_8h_a96c99a5af0b8720710e99939364da3af}{}\label{sm_8h_a96c99a5af0b8720710e99939364da3af}
+
+
+Callback function type for transition effects. 
+
+Specifies an optional behavior to be performed when the transition fires.\+global variable for the transition effect
+
+Callback function type for transition effects.
+
+You can associate a transition with an effect, which is an optional activity performed when a specific transition fires. The associated function may only be set within a transition function. It will be reset to N\+U\+LL again after state transition. Transition effects will not work for internal state transitions.
+
+\begin{DoxyRemark}{Remarks}
+Move to sm instance in future (for future thread safe version) or to transition function as parameter 
+\end{DoxyRemark}
+
+
+Definition at line 93 of file sm.\+c.
+

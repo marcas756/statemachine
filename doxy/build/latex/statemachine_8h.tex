@@ -1,0 +1,164 @@
+\hypertarget{statemachine_8h}{}\subsection{src/statemachine.h File Reference}
+\label{statemachine_8h}\index{src/statemachine.\+h@{src/statemachine.\+h}}
+
+
+Statemachine for testing purposes -\/ interface.  
+
+
+{\ttfamily \#include \char`\"{}sm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stddef.\+h\char`\"{}}\\*
+Include dependency graph for statemachine.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{statemachine_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{statemachine_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0}{statemachine\+\_\+event\+\_\+t} \{ \\*
+\hyperlink{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0aa91fb0824da12f8bb3b74dd78fb13b63}{a}, 
+\hyperlink{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0aa06b03e4cd5c7c464c513a95a7fcf9bf}{b}, 
+\hyperlink{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0a776304400122408ea717dde9234fdd2a}{c}, 
+\hyperlink{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0ae8f0ad1953249e38043d318b8f4400d0}{d}, 
+\\*
+\hyperlink{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0a5be8d0f77f0d0b6c3724e5c446737d1f}{e}
+ \}\begin{DoxyCompactList}\small\item\em Enumeration of events. \end{DoxyCompactList}
+\item 
+enum \hyperlink{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11}{statemachine\+\_\+states\+\_\+t} \{ \hyperlink{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a42a4ade1acd55a49164099104990e09f}{A}, 
+\hyperlink{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a3f2a77ecd272aa6d6b5902faa5e5fc68}{B}, 
+\hyperlink{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a739ce3f516592d245d16fd8a3893472c}{C}
+ \}\begin{DoxyCompactList}\small\item\em Enumeration of states. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structsm__state__t}{sm\+\_\+state\+\_\+t} \hyperlink{statemachine_8h_aa017019d16cc39ebd231a5f2598d79c0}{statemachine\+\_\+states} \mbox{[}$\,$\mbox{]}
+\item 
+const size\+\_\+t \hyperlink{statemachine_8h_a03b8b76d23b4f034c554518a79c91e7e}{statemachine\+\_\+state\+\_\+count}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Statemachine for testing purposes -\/ interface. 
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2013, \href{mailto:marco@bacchi.at}{\tt marco@bacchi.\+at} All rights reserved.
+\end{DoxyCopyright}
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE A\+U\+T\+H\+OR ``\+AS IS\textquotesingle{}\textquotesingle{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+OR BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE.
+
+\begin{DoxyVersion}{Version}
+0000 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Authors}
+\href{mailto:marco@bacchi.at}{\tt marco@bacchi.\+at} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2013
+\end{DoxyDate}
+This statemachine is for testing purposes. It defines three states and some testing transitions between the states. It also makes use of a guard condition and covers exit/entry actions, transition effects and internal transitions.
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=10cm]{sm_test_statemachine.png}
+\caption{Statemachine for testing purposes}
+\end{DoxyImage}
+
+
+{\bfseries Changelist}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*4{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Revision}&{\bf Date }&{\bf Name }&{\bf Change  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}{\bf Revision}&{\bf Date }&{\bf Name }&{\bf Change  }\\\cline{1-4}
+\endhead
+0000 &00.\+00.\+00&bacmar&Detailed Change Text \\\cline{1-4}
+\end{longtabu}
+
+
+\subsubsection{Enumeration Type Documentation}
+\index{statemachine.\+h@{statemachine.\+h}!statemachine\+\_\+event\+\_\+t@{statemachine\+\_\+event\+\_\+t}}
+\index{statemachine\+\_\+event\+\_\+t@{statemachine\+\_\+event\+\_\+t}!statemachine.\+h@{statemachine.\+h}}
+\paragraph[{\texorpdfstring{statemachine\+\_\+event\+\_\+t}{statemachine_event_t}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf statemachine\+\_\+event\+\_\+t}}\hypertarget{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0}{}\label{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0}
+
+
+Enumeration of events. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{a@{a}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!a@{a}}\item[{\em 
+a\hypertarget{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0aa91fb0824da12f8bb3b74dd78fb13b63}{}\label{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0aa91fb0824da12f8bb3b74dd78fb13b63}
+}]Special event used for transiting from state A to state C \index{b@{b}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!b@{b}}\item[{\em 
+b\hypertarget{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0aa06b03e4cd5c7c464c513a95a7fcf9bf}{}\label{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0aa06b03e4cd5c7c464c513a95a7fcf9bf}
+}]Same as event a, but this time for transition from state C to state B \index{c@{c}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!c@{c}}\item[{\em 
+c\hypertarget{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0a776304400122408ea717dde9234fdd2a}{}\label{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0a776304400122408ea717dde9234fdd2a}
+}]Event used for transition from state B to A \index{d@{d}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!d@{d}}\item[{\em 
+d\hypertarget{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0ae8f0ad1953249e38043d318b8f4400d0}{}\label{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0ae8f0ad1953249e38043d318b8f4400d0}
+}]Event used to demonstrate a trnsition with an external guard condition \index{e@{e}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!e@{e}}\item[{\em 
+e\hypertarget{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0a5be8d0f77f0d0b6c3724e5c446737d1f}{}\label{statemachine_8h_a91d62a77883891ea8a2ba2209e4736d0a5be8d0f77f0d0b6c3724e5c446737d1f}
+}]Event used to demonstrate an extrnal transition with a transition effect \end{description}
+\end{Desc}
+
+
+Definition at line 61 of file statemachine.\+h.
+
+\index{statemachine.\+h@{statemachine.\+h}!statemachine\+\_\+states\+\_\+t@{statemachine\+\_\+states\+\_\+t}}
+\index{statemachine\+\_\+states\+\_\+t@{statemachine\+\_\+states\+\_\+t}!statemachine.\+h@{statemachine.\+h}}
+\paragraph[{\texorpdfstring{statemachine\+\_\+states\+\_\+t}{statemachine_states_t}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf statemachine\+\_\+states\+\_\+t}}\hypertarget{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11}{}\label{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11}
+
+
+Enumeration of states. 
+
+Enumeration of states of the state machine. This enumeration has to match with the entries in the state table! \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A@{A}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!A@{A}}\item[{\em 
+A\hypertarget{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a42a4ade1acd55a49164099104990e09f}{}\label{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a42a4ade1acd55a49164099104990e09f}
+}]State with entry/exit action, an internal transition, and external transition and an external contition with guard condition \index{B@{B}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!B@{B}}\item[{\em 
+B\hypertarget{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a3f2a77ecd272aa6d6b5902faa5e5fc68}{}\label{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a3f2a77ecd272aa6d6b5902faa5e5fc68}
+}]State with exit action, an external tranistion and another external transition with a transition effect \index{C@{C}!statemachine.\+h@{statemachine.\+h}}\index{statemachine.\+h@{statemachine.\+h}!C@{C}}\item[{\em 
+C\hypertarget{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a739ce3f516592d245d16fd8a3893472c}{}\label{statemachine_8h_aafed9102c6a9aa0ab8753ce5b5cb6f11a739ce3f516592d245d16fd8a3893472c}
+}]State with entry action, internal tranition and eternal transition \end{description}
+\end{Desc}
+
+
+Definition at line 74 of file statemachine.\+h.
+
+
+
+\subsubsection{Variable Documentation}
+\index{statemachine.\+h@{statemachine.\+h}!statemachine\+\_\+state\+\_\+count@{statemachine\+\_\+state\+\_\+count}}
+\index{statemachine\+\_\+state\+\_\+count@{statemachine\+\_\+state\+\_\+count}!statemachine.\+h@{statemachine.\+h}}
+\paragraph[{\texorpdfstring{statemachine\+\_\+state\+\_\+count}{statemachine_state_count}}]{\setlength{\rightskip}{0pt plus 5cm}const size\+\_\+t statemachine\+\_\+state\+\_\+count}\hypertarget{statemachine_8h_a03b8b76d23b4f034c554518a79c91e7e}{}\label{statemachine_8h_a03b8b76d23b4f034c554518a79c91e7e}
+Number of state entries in the state table 
+
+Definition at line 239 of file statemachine.\+c.
+
+\index{statemachine.\+h@{statemachine.\+h}!statemachine\+\_\+states@{statemachine\+\_\+states}}
+\index{statemachine\+\_\+states@{statemachine\+\_\+states}!statemachine.\+h@{statemachine.\+h}}
+\paragraph[{\texorpdfstring{statemachine\+\_\+states}{statemachine_states}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf sm\+\_\+state\+\_\+t} statemachine\+\_\+states\mbox{[}$\,$\mbox{]}}\hypertarget{statemachine_8h_aa017019d16cc39ebd231a5f2598d79c0}{}\label{statemachine_8h_aa017019d16cc39ebd231a5f2598d79c0}
+Statemachine states table 
+
+Definition at line 232 of file statemachine.\+c.
+

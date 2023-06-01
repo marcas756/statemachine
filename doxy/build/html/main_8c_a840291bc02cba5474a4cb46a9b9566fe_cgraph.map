@@ -1,0 +1,4 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$group___sm_interface.html#ga4d433df4f0fbd1033d3815ad870cdc5f" title="Initialize a statemachine with a provided initial state. " alt="" coords="109,5,173,32"/>
+<area shape="rect" id="node3" href="$group___sm_interface.html#gac4c2466939ae8d63448dc84848abb7fe" title="Sends an event to a statemachine. " alt="" coords="104,56,179,83"/>
+</map>

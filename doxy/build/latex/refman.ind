@@ -1,0 +1,180 @@
+\begin{theindex}
+
+  \item {A}
+    \subitem {statemachine.\+h}, \hyperpage{31}
+  \item {a}
+    \subitem {statemachine.\+h}, \hyperpage{30}
+  \item {A\+\_\+entry}
+    \subitem {statemachine.\+c}, \hyperpage{25}
+  \item {A\+\_\+exit}
+    \subitem {statemachine.\+c}, \hyperpage{25}
+  \item {A\+\_\+transitions}
+    \subitem {statemachine.\+c}, \hyperpage{25}
+
+  \indexspace
+
+  \item {B}
+    \subitem {statemachine.\+h}, \hyperpage{31}
+  \item {b}
+    \subitem {statemachine.\+h}, \hyperpage{30}
+  \item {B\+\_\+exit}
+    \subitem {statemachine.\+c}, \hyperpage{25}
+  \item {B\+\_\+transitions}
+    \subitem {statemachine.\+c}, \hyperpage{26}
+  \item {Be\+C\+\_\+transition\+\_\+effect}
+    \subitem {statemachine.\+c}, \hyperpage{26}
+
+  \indexspace
+
+  \item {C}
+    \subitem {statemachine.\+h}, \hyperpage{31}
+  \item {c}
+    \subitem {statemachine.\+h}, \hyperpage{30}
+  \item {C\+\_\+entry}
+    \subitem {statemachine.\+c}, \hyperpage{27}
+  \item {C\+\_\+transitions}
+    \subitem {statemachine.\+c}, \hyperpage{27}
+
+  \indexspace
+
+  \item {d}
+    \subitem {statemachine.\+h}, \hyperpage{30}
+  \item {D\+BG}
+    \subitem {statemachine.\+c}, \hyperpage{24}
+  \item {D\+E\+B\+UG}
+    \subitem {statemachine.\+c}, \hyperpage{24}
+  \item {data}
+    \subitem {sm\+\_\+t}, \hyperpage{10}
+  \item {doxy/mainpage.\+dox}, \hyperpage{11}
+  \item {doxy/modules.\+dox}, \hyperpage{11}
+
+  \indexspace
+
+  \item {e}
+    \subitem {statemachine.\+h}, \hyperpage{30}
+  \item {entry\+\_\+action}
+    \subitem {sm\+\_\+state\+\_\+t}, \hyperpage{9}
+  \item {event\+\_\+t}
+    \subitem {sm.\+h}, \hyperpage{19}
+  \item {exit\+\_\+action}
+    \subitem {sm\+\_\+state\+\_\+t}, \hyperpage{9}
+
+  \indexspace
+
+  \item {guard}
+    \subitem {statemachine.\+c}, \hyperpage{27}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\+c}, \hyperpage{12}
+  \item {main.\+c}
+    \subitem {main}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Public Interface Descriptions}, \hyperpage{5}
+  \item {Public Statemachine Interface}, \hyperpage{6}
+    \subitem {sm\+\_\+init}, \hyperpage{6}
+    \subitem {sm\+\_\+send}, \hyperpage{7}
+    \subitem {sm\+\_\+terminate}, \hyperpage{7}
+
+  \indexspace
+
+  \item {S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT}
+    \subitem {sm.\+h}, \hyperpage{19}
+  \item {S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}
+    \subitem {sm.\+h}, \hyperpage{19}
+  \item {sm.\+c}
+    \subitem {sm\+\_\+transition\+\_\+effect}, \hyperpage{15}
+  \item {sm.\+h}
+    \subitem {event\+\_\+t}, \hyperpage{19}
+    \subitem {S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+E\+X\+IT}, 
+		\hyperpage{19}
+    \subitem {S\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+IT}, 
+		\hyperpage{19}
+    \subitem {sm\+\_\+entry\+\_\+action\+\_\+fp}, \hyperpage{19}
+    \subitem {sm\+\_\+exit\+\_\+action\+\_\+fp}, \hyperpage{21}
+    \subitem {sm\+\_\+state\+\_\+id}, \hyperpage{19}
+    \subitem {sm\+\_\+state\+\_\+t}, \hyperpage{21}
+    \subitem {sm\+\_\+transition\+\_\+effect}, \hyperpage{22}
+    \subitem {sm\+\_\+transition\+\_\+effect\+\_\+fp}, \hyperpage{21}
+    \subitem {sm\+\_\+transitions\+\_\+fp}, \hyperpage{21}
+  \item {sm\+\_\+entry\+\_\+action\+\_\+fp}
+    \subitem {sm.\+h}, \hyperpage{19}
+  \item {sm\+\_\+exit\+\_\+action\+\_\+fp}
+    \subitem {sm.\+h}, \hyperpage{21}
+  \item {sm\+\_\+init}
+    \subitem {Public Statemachine Interface}, \hyperpage{6}
+  \item {sm\+\_\+send}
+    \subitem {Public Statemachine Interface}, \hyperpage{7}
+  \item {sm\+\_\+state\+\_\+id}
+    \subitem {sm.\+h}, \hyperpage{19}
+  \item {sm\+\_\+state\+\_\+t}, \hyperpage{9}
+    \subitem {entry\+\_\+action}, \hyperpage{9}
+    \subitem {exit\+\_\+action}, \hyperpage{9}
+    \subitem {sm.\+h}, \hyperpage{21}
+    \subitem {transitions}, \hyperpage{9}
+  \item {sm\+\_\+t}, \hyperpage{10}
+    \subitem {data}, \hyperpage{10}
+    \subitem {state}, \hyperpage{10}
+  \item {sm\+\_\+terminate}
+    \subitem {Public Statemachine Interface}, \hyperpage{7}
+  \item {sm\+\_\+transition\+\_\+effect}
+    \subitem {sm.\+c}, \hyperpage{15}
+    \subitem {sm.\+h}, \hyperpage{22}
+  \item {sm\+\_\+transition\+\_\+effect\+\_\+fp}
+    \subitem {sm.\+h}, \hyperpage{21}
+  \item {sm\+\_\+transitions\+\_\+fp}
+    \subitem {sm.\+h}, \hyperpage{21}
+  \item {src/main.\+c}, \hyperpage{11}
+  \item {src/sm.\+c}, \hyperpage{13}
+  \item {src/sm.\+h}, \hyperpage{16}
+  \item {src/statemachine.\+c}, \hyperpage{22}
+  \item {src/statemachine.\+h}, \hyperpage{28}
+  \item {state}
+    \subitem {sm\+\_\+t}, \hyperpage{10}
+  \item {statemachine.\+c}
+    \subitem {A\+\_\+entry}, \hyperpage{25}
+    \subitem {A\+\_\+exit}, \hyperpage{25}
+    \subitem {A\+\_\+transitions}, \hyperpage{25}
+    \subitem {B\+\_\+exit}, \hyperpage{25}
+    \subitem {B\+\_\+transitions}, \hyperpage{26}
+    \subitem {Be\+C\+\_\+transition\+\_\+effect}, \hyperpage{26}
+    \subitem {C\+\_\+entry}, \hyperpage{27}
+    \subitem {C\+\_\+transitions}, \hyperpage{27}
+    \subitem {D\+BG}, \hyperpage{24}
+    \subitem {D\+E\+B\+UG}, \hyperpage{24}
+    \subitem {guard}, \hyperpage{27}
+    \subitem {statemachine\+\_\+state\+\_\+count}, \hyperpage{27}
+    \subitem {statemachine\+\_\+states}, \hyperpage{28}
+  \item {statemachine.\+h}
+    \subitem {A}, \hyperpage{31}
+    \subitem {a}, \hyperpage{30}
+    \subitem {B}, \hyperpage{31}
+    \subitem {b}, \hyperpage{30}
+    \subitem {C}, \hyperpage{31}
+    \subitem {c}, \hyperpage{30}
+    \subitem {d}, \hyperpage{30}
+    \subitem {e}, \hyperpage{30}
+    \subitem {statemachine\+\_\+event\+\_\+t}, \hyperpage{30}
+    \subitem {statemachine\+\_\+state\+\_\+count}, \hyperpage{31}
+    \subitem {statemachine\+\_\+states}, \hyperpage{31}
+    \subitem {statemachine\+\_\+states\+\_\+t}, \hyperpage{30}
+  \item {statemachine\+\_\+event\+\_\+t}
+    \subitem {statemachine.\+h}, \hyperpage{30}
+  \item {statemachine\+\_\+state\+\_\+count}
+    \subitem {statemachine.\+c}, \hyperpage{27}
+    \subitem {statemachine.\+h}, \hyperpage{31}
+  \item {statemachine\+\_\+states}
+    \subitem {statemachine.\+c}, \hyperpage{28}
+    \subitem {statemachine.\+h}, \hyperpage{31}
+  \item {statemachine\+\_\+states\+\_\+t}
+    \subitem {statemachine.\+h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {transitions}
+    \subitem {sm\+\_\+state\+\_\+t}, \hyperpage{9}
+
+\end{theindex}
